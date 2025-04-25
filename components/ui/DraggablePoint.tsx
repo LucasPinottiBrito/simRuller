@@ -34,13 +34,13 @@ const DraggablePoint: React.FC<DraggablePointProps> = ({ x, y, onChange, color =
 
   const handleMouseMove = (e: MouseEvent) => {
     if (dragging.current) {
-      updatePosition(e.clientX - 10, e.clientY - 10);
+      updatePosition(e.clientX - 15, e.clientY - 15);
     }
   };
 
   const handleTouchMove = (e: TouchEvent) => {
     if (dragging.current) {
-      updatePosition(e.touches[0].clientX-20, e.touches[0].clientY-20);
+      updatePosition(e.touches[0].clientX-25, e.touches[0].clientY-25);
     }
   };
 
@@ -64,12 +64,12 @@ const DraggablePoint: React.FC<DraggablePointProps> = ({ x, y, onChange, color =
   return (
     <div
       ref={pointRef}
-      className="absolute"
+      className="absolute flex items-center justify-center"
       style={{
-        left: x - 20,
-        top: y - 20,
-        width: 40,
-        height: 40,
+        left: x - 25,
+        top: y - 25,
+        width: 50,
+        height: 50,
         border: `2px solid ${color}`,
         borderRadius: '50%',
         backgroundColor: 'transparent',
@@ -81,7 +81,8 @@ const DraggablePoint: React.FC<DraggablePointProps> = ({ x, y, onChange, color =
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
     >
-      <p className="text-center text-2xl h-full w-full p-0.5 select-none">+</p>
+      <div className={`absolute h-full w-[1px]`} style={{backgroundColor: color}}/>
+      <div className={`absolute w-full h-[1px]`} style={{backgroundColor: color}}/>
     </div>
   );
 };
