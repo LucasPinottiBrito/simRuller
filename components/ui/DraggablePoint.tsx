@@ -40,7 +40,7 @@ const DraggablePoint: React.FC<DraggablePointProps> = ({ x, y, onChange, color =
 
   const handleTouchMove = (e: TouchEvent) => {
     if (dragging.current) {
-      updatePosition(e.touches[0].clientX-25, e.touches[0].clientY-25);
+      updatePosition(e.touches[0].clientX-30, e.touches[0].clientY-30);
     }
   };
 
