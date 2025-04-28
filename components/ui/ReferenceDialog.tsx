@@ -20,6 +20,8 @@ const ReferenceDialog: React.FC<ReferenceDialogProps> = ({ open, onClose, onSave
   const [value, setValue] = useState<string>('');
 
   const handleSave = () => {
+    setValue(value.trim());
+    setValue(value.replace(',', '.'));
     const num = parseFloat(value);
     if (!isNaN(num) && num > 0) {
       onSave(num);

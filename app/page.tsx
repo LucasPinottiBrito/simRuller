@@ -44,7 +44,7 @@ export default function Home() {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900'>
+    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900' translate='no'>
 
       <h1 className="text-xl font-bold mb-4">SimRuler - Referência de Escala</h1>
       <input type="file" accept="image/*" onChange={handleImageUpload} className="mb-4 text-center" />
@@ -61,6 +61,20 @@ export default function Home() {
                 alt="Uploaded"
                 className="w-full select-none pointer-events-none"
                 />
+                {
+                  refDistanceCm && refDistancePx && (
+                    <svg className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                      <line
+                        x1={point1.x}
+                        y1={point1.y}
+                        x2={point2.x}
+                        y2={point2.y}
+                        stroke="white"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  )
+                }
               <DraggablePoint x={point1.x} y={point1.y} onChange={(x, y) => setPoint1({ x, y })} color="red" />
               <DraggablePoint x={point2.x} y={point2.y} onChange={(x, y) => setPoint2({ x, y })} color="blue" />
             </div>
