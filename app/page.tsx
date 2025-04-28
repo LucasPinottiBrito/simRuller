@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import DraggablePoint from '@/components/ui/DraggablePoint';
+import DraggablePoint from '@/components/DraggablePoint';
 import { Button, TextField } from '@mui/material';
-import ReferenceDialog from '@/components/ui/ReferenceDialog';
+import ReferenceDialog from '@/components/ReferenceDialog';
 
 interface Point {
   x: number;
@@ -44,9 +44,16 @@ export default function Home() {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900' translate='no'>
-
-      <h1 className="text-xl font-bold mb-4">SimRuler - Referência de Escala</h1>
+    <div className='flex flex-col items-center w-full min-h-screen bg-gray-100 text-gray-900' translate='no'>
+      <header className="w-full mb-10 border-b border-gray-200 bg-white px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            {/* <SidebarTrigger /> */}
+            <h1 className="text-xl font-semibold text-gray-900">SimRuller</h1>
+          </div>
+        </div>
+      </header>
+      <h1 className="text-xl font-bold mb-4">Dynamic Scale</h1>
       <input type="file" accept="image/*" onChange={handleImageUpload} className="mb-4 text-center" />
       <div className='flex flex-col items-center justify-center p-10'>
         <main className="flex flex-col items-center justify-center bg-white touch-pinch-zoom overscroll-contain">

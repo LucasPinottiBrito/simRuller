@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SimRuler - Referência de Escala",
+  title: "SimRuler - Dynamic Scale Ruler",
   description: "Testing application for measuring distances in images",
 };
 
